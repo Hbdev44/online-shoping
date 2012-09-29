@@ -1,0 +1,11 @@
+<ul type=none>
+		  
+	  <% @category.each do |c|%>
+		  <li >
+		  	<%=link_to c.categoryname %> 
+		  	<%= link_to 'delete', :action=>"delete", :id=>c.id%>
+      		<%= link_to 'Edit',:action=>"edit", :id=>c.id %>
+		  </li>   
+	  <% end %>		
+</ul>
+<h2><%= button_to "home",{:controller => "categories",:action => "index"},:style => "text-decoration:none;float:left;"%> 

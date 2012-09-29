@@ -1,0 +1,10 @@
+
+	<% @category.each do |a|%>
+
+	<div class=q>
+		<%=link_to_remote a.categoryname,:url=>{:controller=>"products",:action=>"show_products",:catid=>a.id}%>
+	</div> 
+
+			
+	<% end %>		
+

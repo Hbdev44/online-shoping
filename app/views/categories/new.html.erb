@@ -1,0 +1,5 @@
+<%form_for @category, :url=>{:controller=>"categories",:action=>"create"} do |f|%>
+Category Name:<%= f.text_field :categoryname %><br/>
+Category Discription:<%= f.text_field :type %><br/>
+	<%= f.submit "submit" 	%>
+<%end%>

@@ -1,0 +1,14 @@
+<div style="background_color:blue ">
+	
+</div>
+<center><%form_tag "/users/authenticate" do %>
+User Name:<%= text_field_tag :u_name %><br/>&nbsp;&nbsp;
+Password:<%= password_field_tag :password %>
+
+<div style="margin-left : 125"><%= submit_tag "submit" %></div><br/>
+
+If you doesnt have the login id please register by clicking hear<br/>
+ <%= link_to 'Register',:action=>"registration"%>
+<%end%>
+</div>
+</center>

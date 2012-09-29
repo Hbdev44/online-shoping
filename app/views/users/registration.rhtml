@@ -1,0 +1,12 @@
+<%form_for (@user), :url=>{:action=>"create"}, :html => { :multipart => true } do |f|%>
+First Name:<%= f.text_field :first_name %><br/>
+Last Name:<%= f.text_field :last_name %><br/>
+User Name:<%= f.text_field :u_name %><br/>
+Mail id:<%= f.text_field :mailId %><br/>
+Phone no:<%= f.text_field :ph_no %><br/>
+Address:<%= f.text_area :address %><br/>
+Password:<%= f.password_field :password%><br/>
+
+<%= f.file_field :user %></br>
+<%= f.submit "submit" 	%>
+<%end%>

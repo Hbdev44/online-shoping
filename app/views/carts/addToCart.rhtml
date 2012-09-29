@@ -1,0 +1,25 @@
+
+	<% form_for  :products,@products,:url => {:action=>"updateCart",:id=>@products.id},:html => {:method=> "put", :multipart => true } do |f| %>
+		
+		<div style="float:left;">
+		<div style="float:left;">
+	  		<%=image_tag @products.avatar.url(:medium) %><br>
+	  	</div>
+	  	&nbsp;<b style="color:white;">Product Name</b>:<%= @products.p_name %>	<br>
+		&nbsp;<b style="color:white;">Product Price</b>: RS.<%= @products.p_cost %></br>
+		&nbsp;<b style="color:white;">Product Description</b>:<%=@products.p_dis%><br>
+		<%if session[:order].has_key?(@products.id)%>
+		&nbsp;<b style="color:white;">Product Description</b>:<%=@products.p_nitem-session[:order][@products.id] %><br>
+		<%else%>
+			&nbsp;<b style="color:white;">Product Description</b>:<%=@products.p_nitem%><br>
+		<%end%>
+		
+		<% p_quantity = session[:order][@products.id.to_s]	%>
+		<%#= p_quantity %>
+		No of Items to be ordered:<%= text_field_tag :pitem,p_quantity.to_i %></br>
+		<%= link_to 'Back to home',{:controller=>"products",:action=>"index"}%>
+		<%= f.submit "Add"%>
+		</div>
+		
+	    
+	<%end%>

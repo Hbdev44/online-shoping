@@ -1,0 +1,122 @@
+.C
+{
+	padding-top: 20px;
+	padding-left: 13px;
+	padding-bottom: 30px;
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	margin: 0px 20px 0px 0px;
+	background-color:white;
+	width: 20%;
+	//height:98%;
+	float :left;
+	position: relative;
+	border-radius:20;
+	
+}
+.q
+{
+	margin-bottom: 20px;
+	padding-top: 15px;
+	padding-left: 13px;
+	padding-bottom: 15px;
+		
+}
+.a
+{
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	margin: 10px 0px 0px 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #0FABD6;
+	width: 96%;
+	//height:300%;
+	float :left;
+	border-radius:20;
+ 
+}
+a:hover
+{ 
+
+	background-color:#0FABD6;
+	// #9E2121
+}
+a
+{
+	margin-top: 20px;
+	text-decoration: none;
+	color: #11F2F2;
+	//height: 200%;
+	//background-color: #F21111;
+	border-radius:40;
+}
+.m
+{
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	padding-top: 10px;
+	padding-left: 10px;
+	background-color:2C85A8;
+	width: 98.2%;
+	height:20%	;
+	float :left;
+	border-radius:20
+
+}
+
+.n
+{
+	margin-bottom: 15px;
+	#margin: 2px 0px 0px 2px;
+	width: 210;
+	height:240;
+	float :left;
+	border-radius:20;
+	padding-top: 7px;
+	padding-right: 10px;
+		min-height: 
+}
+.d
+{
+	margin: 2px 0px 0px 2px;
+	width: 12%;
+	height:90%;
+	float :left;
+	border-radius:20;
+	padding-top: 7px;
+	padding-left: 15px;
+}
+.x
+{
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	margin: 0px 0px 0px 0px;
+	padding-left:15px;
+	background-color: white;
+	width: 68%;
+//		height:98%;
+	float :left;
+	border-radius:20;	
+}
+.l
+{
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	margin: -126px 0px 0px 300px;
+	padding-left:15px;
+	background-color: white;
+	width: 240%;
+//		height:98%;
+	float :left;
+	border-radius:20;		
+}
+button
+{
+	width: 20px;
+	height:5px;
+	border-radius:3%;
+}
+.p
+{
+	margin-top: 10px;
+	width:30%;
+	height:3%;
+	text-decoration: none;
+	color: blue;	
+}

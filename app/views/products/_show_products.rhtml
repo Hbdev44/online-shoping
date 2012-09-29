@@ -1,0 +1,17 @@
+<ul type=none>
+		  <%# for item in @products %>
+	  <% @products.each do |item|%>
+		  <li class=n>
+		  	<%= image_tag item.avatar.url(:thumb)%><br>
+		  	<%= item.p_name %><br>
+		  	RS:<%= item.p_cost%><br>	
+		  	
+		  	<%if session[:u_name].u_name=="p.sravan44"%>
+		  	  	<%= link_to 'Edit',:action=>"edit", :id=>item.id %>
+		  	  	<%= link_to 'Delete',:action=>"delete", :id=>item.id %>
+		  	<%end%><br>
+		  	<%= link_to 'Description',:action=>"description", :id=>item.id %>
+		   </li>   
+		  
+	  <% end %>		
+</ul>

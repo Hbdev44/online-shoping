@@ -1,0 +1,38 @@
+      <%# for item in @products %>
+   <div class=c>
+    <ul type=none>
+  <% @category.each do |a|%>
+  <li >
+  <%=link_to_remote a.categoryname,:url=>{:controller=>"products",:action=>"show_products",:catid=>a.id}%> 
+  </li>   
+  <% end %>   
+<div class=l id="products_list">
+  <% form_for @product,"poducts/discription",:html => {:method=> "put", :multipart => true } do |f| %>
+  	<%#for post in @login %>
+    <div style="float:left;">
+  		<%= image_tag @product.avatar.url(:medium) %><br>
+    </div>
+    <div style="margin-top: 10px;margine-left : 30px;">
+        <table>
+        <tr><th colspan="2"><h2 style="Color:white">Product Details</h2></th></tr>
+        <tr><td colspan="2"><span>&nbsp;</span></td></tr>
+
+        <tr><td>Product Name</td><td>&nbsp;&nbsp;:&nbsp;<%= @product.p_name %></td></tr>
+        <tr><td>Product Price</td><td>&nbsp;&nbsp;:&nbsp;<%= @product.p_cost %></td></tr>
+        <tr><td>Product Description</td><td>&nbsp;&nbsp;:&nbsp;<%= @product.p_dis %></td></tr>
+        
+          <% if session[:u_name]%>
+            <tr><td>
+              <%= link_to "Add to Cart",{:controller=>"carts",:action=>"addToCart",:id=>@product.id}%></td>
+              <td><%= link_to "Back to Products" ,:action=>"index" %></td></tr>
+            <%else %>
+
+            <tr></tr>
+             <tr><td colspan="2"><div style="background-color=red;height=10px;width=30px"><%= link_to "Back to Products" , {:controller=>"products",:action=>"index"}%></div></td></tr>
+          <% end %>
+      </table>
+    </div>	
+
+  <% end %>
+</div>
+

@@ -1,0 +1,15 @@
+	<ul type=none>
+		  <%# for item in @products %>
+	 <div class=c>
+		<ul type=none>
+	<% @category.each do |a|%>
+	<li >
+	<%=link_to_remote a.categoryname,:url=>{:controller=>"products",:action=>"show_products",:catid=>a.id}%> 
+	</li>   
+	<% end %>		
+</ul>
+	<div id="product_list">
+		<% render :partial=>"show_products" %>
+	</div>
+
+    

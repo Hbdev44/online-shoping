@@ -1,0 +1,29 @@
+<% form_for  :products,:html => {:method=> "put", :multipart => true } do |f| %>
+<% total=0 %>
+<center>
+	<%#=session[:order]["8"]%>
+<table cellspacing="10">
+	<tr>
+		<th> Image product</th>
+		<th>no of items ordered</th>
+		<th> Name of the product </th>
+		<th> Cost per product</th>
+		<th> Cost </th>
+	</tr>
+	<% @order.each do |i,q|%>
+	<% item=Product.find_by_id(i)%>
+		<tr>
+			
+			<td align=center><%=image_tag item.avatar.url(:thumb) %></td>
+			<td align=center>&nbsp;&nbsp;<%= q %>	</td>
+			<td align=center>&nbsp;&nbsp;<%=item.p_name %>	</td>
+			<td align=center>&nbsp;&nbsp;RS.<%=item.p_cost%></td>
+			<td align=center>&nbsp;&nbsp;RS.<%= q.to_i*item.p_cost.to_i %></td>
+			<% total+=q.to_i*item.p_cost.to_i %>
+		</tr>
+	<%end%>
+</table>
+	<span>Total cost:</span> <%= total %>
+	
+</center>
+<%end%>

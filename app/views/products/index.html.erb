@@ -1,0 +1,38 @@
+
+
+<ul type=none>
+		  
+	 <div class=c>
+		<ul type=none>
+	<% @category.each do |a|%>
+	<li >
+	<%=link_to_remote a.categoryname,:url=>{:controller=>"products",:action=>"show_products",:catid=>a.id}%> 
+	</li>   
+	<% end %>		
+</ul>
+	</div>
+	<div id="products_list" class=x>
+	<div class=p>	<%= will_paginate @products%></div>
+	  <% @products.each do |item|%>
+		  <div class=n >
+		  	<%= image_tag item.avatar.url(:thumb) %><br>
+		  	<%= item.p_name %>&nbsp	<br>
+		  	RS:<%= item.p_cost %>	
+		  	<%if session[:u_name]%>
+		  	<br>
+
+		  	<%if session[:u_name].u_name=="p.sravan44"%>
+		  		<%= link_to 'Edit',:action=>"edit", :id=>item.id %>&nbsp;&nbsp;
+		  		<%= link_to 'Delete',:action=>"delete", :id=>item.id %><br>
+		  		<%= link_to 'Description',:action=>"description", :id=>item.id %>
+		  	<%else%>
+		  		<%= link_to 'Description',:action=>"description", :id=>item.id %>
+		  	<%end%>
+		  	<br>
+		  	<%end%>
+		  	
+		   </div>   
+		<% end %>
+	</div>	  
+	  		
+</ul>
